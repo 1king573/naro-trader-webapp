@@ -4,7 +4,7 @@ import { ArrowLeft, CircleCheck, Loader2, ChevronDown } from 'lucide-react';
 import { AuthenticatedLayout } from '../components/layout/AuthenticatedLayout';
 
 export function WalletToCTraderPage() {
-  const [account, setAccount] = useState('');
+  const [account] = useState('');
   const [amount, setAmount] = useState('');
   const [note, setNote] = useState('');
   const [loading, setLoading] = useState(false);

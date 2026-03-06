@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Shield, ArrowDown, ArrowRight, ArrowLeft, Landmark, Inbox } from 'lucide-react';
+import { Shield, ArrowDown, ArrowRight, ArrowLeft, Landmark } from 'lucide-react';
 import { AuthenticatedLayout } from '../components/layout/AuthenticatedLayout';
 
 export function WalletPage() {
