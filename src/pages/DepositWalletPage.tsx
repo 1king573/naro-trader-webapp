@@ -32,7 +32,7 @@ export function DepositWalletPage() {
           </div>
         </div>
 
-        <div className="flex gap-[24px]">
+        <div className="flex flex-col lg:flex-row gap-[24px]">
           {/* Left - Form or Success */}
           <div className="flex-1 min-w-0">
             {submitted ? (
@@ -60,7 +60,7 @@ export function DepositWalletPage() {
           </div>
 
           {/* Right - Info Cards */}
-          <div className="flex flex-col gap-[16px] w-[420px] shrink-0">
+          <div className="flex flex-col gap-[16px] w-full lg:w-[420px] lg:shrink-0">
             <StepsCard title="How deposits work" steps={[
               { num: '1', text: 'Submit your deposit request with amount and payment reference' },
               { num: '2', text: 'An admin reviews and verifies your payment' },

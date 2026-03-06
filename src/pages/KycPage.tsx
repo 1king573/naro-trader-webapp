@@ -91,7 +91,7 @@ function Step1Content({ onNext }: { onNext: () => void }) {
   };
 
   return (
-    <div className="flex gap-[24px]">
+    <div className="flex flex-col lg:flex-row gap-[24px]">
       {/* Left - Upload */}
       <div className="flex flex-col gap-[16px] flex-1">
         <div className="flex flex-col gap-[16px] rounded-[12px] bg-white p-[28px] border border-[#E2E8F0]">
@@ -101,7 +101,7 @@ function Step1Content({ onNext }: { onNext: () => void }) {
             Upload a clear photo of your government-issued ID (passport, driver's license, or national ID card).
           </p>
 
-          <div className="flex gap-[16px]">
+          <div className="flex flex-col sm:flex-row gap-[16px]">
             <UploadZone label="Front Side" />
             <UploadZone label="Back Side" />
           </div>
@@ -119,7 +119,7 @@ function Step1Content({ onNext }: { onNext: () => void }) {
       </div>
 
       {/* Right - Info Cards */}
-      <div className="flex flex-col gap-[16px] w-[420px] shrink-0">
+      <div className="flex flex-col gap-[16px] w-full lg:w-[420px] lg:shrink-0">
         <InfoCard title="Why we need your ID" items={[
           'Regulatory compliance (KYC/AML)',
           'Protect your account from fraud',
@@ -153,7 +153,7 @@ function Step2Content({ onSubmit }: { onSubmit: () => void }) {
   };
 
   return (
-    <div className="flex gap-[24px]">
+    <div className="flex flex-col lg:flex-row gap-[24px]">
       {/* Left - Upload */}
       <div className="flex flex-col gap-[16px] flex-1">
         <div className="flex flex-col gap-[16px] rounded-[12px] bg-white p-[28px] border border-[#E2E8F0]">
@@ -190,7 +190,7 @@ function Step2Content({ onSubmit }: { onSubmit: () => void }) {
       </div>
 
       {/* Right - Info Cards */}
-      <div className="flex flex-col gap-[16px] w-[420px] shrink-0">
+      <div className="flex flex-col gap-[16px] w-full lg:w-[420px] lg:shrink-0">
         <InfoCard title="Why we need your ID" items={[
           'Regulatory compliance (KYC/AML)',
           'Protect your account from fraud',

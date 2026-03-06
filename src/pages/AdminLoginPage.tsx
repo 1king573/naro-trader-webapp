@@ -29,7 +29,7 @@ export function AdminLoginPage() {
   return (
     <div className="h-full w-full flex flex-col items-center justify-center gap-[20px] bg-[#0D1B2A]">
       {/* Card */}
-      <div className="w-[420px] bg-white rounded-[16px] shadow-[0_8px_40px_rgba(0,0,0,0.3)] p-[36px]">
+      <div className="w-full max-w-[420px] mx-4 md:mx-0 bg-white rounded-[16px] shadow-[0_8px_40px_rgba(0,0,0,0.3)] p-[36px]">
         <form onSubmit={handleSubmit} className="flex flex-col items-center gap-[20px]">
           {/* Admin Badge */}
           <div className="flex items-center gap-[6px] bg-[#1E293B] rounded-full py-[6px] px-[12px]">

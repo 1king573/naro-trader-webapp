@@ -22,7 +22,7 @@ export function RegisterPage() {
 
   return (
     <div className="h-full w-full flex items-center justify-center bg-[var(--color-bg-canvas)]">
-      <div className="w-[420px] bg-[var(--color-bg-card)] rounded-[16px] shadow-[0_4px_24px_rgba(0,0,0,0.08)] pt-[28px] px-[28px] pb-[24px]">
+      <div className="w-full max-w-[420px] mx-4 md:mx-0 bg-[var(--color-bg-card)] rounded-[16px] shadow-[0_4px_24px_rgba(0,0,0,0.08)] pt-[28px] px-[28px] pb-[24px]">
         <form onSubmit={handleSubmit} className="flex flex-col gap-[16px]">
           {/* Header Section */}
           <div className="flex flex-col items-center gap-[12px] w-full">

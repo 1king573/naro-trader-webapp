@@ -31,9 +31,9 @@ export function TransactionDetailPage() {
         </div>
 
         {/* Status Banner */}
-        <div className="flex items-center justify-between rounded-[12px] bg-[#FFF7ED] border border-[#FED7AA] px-[20px] py-[18px]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-[14px] rounded-[12px] bg-[#FFF7ED] border border-[#FED7AA] px-[20px] py-[18px]">
           <div className="flex items-center gap-[14px]">
-            <div className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[#FDE68A]">
+            <div className="flex items-center justify-center w-[40px] h-[40px] rounded-full bg-[#FDE68A] shrink-0">
               <Clock3 size={20} className="text-[#F59E0B]" />
             </div>
             <div className="flex flex-col gap-[4px]">
@@ -43,7 +43,7 @@ export function TransactionDetailPage() {
           </div>
           <button
             onClick={() => setShowCancelModal(true)}
-            className="flex items-center gap-[8px] rounded-[8px] border border-[#EF4444] px-[14px] py-[10px] font-primary text-[13px] font-semibold text-[#EF4444] cursor-pointer hover:bg-[#FEF2F2] transition-colors"
+            className="flex items-center justify-center gap-[8px] rounded-[8px] border border-[#EF4444] px-[14px] py-[10px] font-primary text-[13px] font-semibold text-[#EF4444] cursor-pointer hover:bg-[#FEF2F2] transition-colors shrink-0 w-full sm:w-auto"
           >
             <X size={14} />
             Cancel Request
@@ -51,7 +51,7 @@ export function TransactionDetailPage() {
         </div>
 
         {/* Two Column */}
-        <div className="flex gap-[20px]">
+        <div className="flex flex-col lg:flex-row gap-[20px]">
           {/* Left - Request Info */}
           <div className="flex flex-col flex-1 rounded-[12px] bg-white border border-[#E2E8F0] p-[24px]">
             <span className="font-primary text-[16px] font-bold text-[#0F172A]">Request Information</span>
@@ -69,7 +69,7 @@ export function TransactionDetailPage() {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col gap-[16px] w-[420px] shrink-0">
+          <div className="flex flex-col gap-[16px] w-full lg:w-[420px] lg:shrink-0">
             {/* Amount Summary */}
             <div className="flex flex-col gap-[12px] rounded-[12px] bg-white border border-[#E2E8F0] p-[20px]">
               <span className="font-primary text-[14px] font-bold text-[#0F172A]">Amount Summary</span>
@@ -105,7 +105,7 @@ export function TransactionDetailPage() {
       {/* Cancel Modal */}
       {showCancelModal && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-          <div className="flex flex-col items-center gap-[16px] rounded-[16px] bg-white p-[24px] w-[400px]">
+          <div className="flex flex-col items-center gap-[16px] rounded-[16px] bg-white p-[24px] w-full max-w-[400px] mx-4">
             <TriangleAlert size={28} className="text-[var(--color-warning)]" />
             <span className="font-primary text-[24px] font-bold text-[var(--color-text-primary)] text-center">Cancel this request?</span>
             <p className="font-primary text-[14px] text-[var(--color-text-secondary)] text-center leading-[1.4]">

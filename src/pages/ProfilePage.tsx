@@ -26,7 +26,7 @@ export function ProfilePage() {
         </div>
 
         {/* Two Column */}
-        <div className="flex gap-[20px]">
+        <div className="flex flex-col lg:flex-row gap-[20px]">
           {/* Left Column */}
           <div className="flex flex-col gap-[20px] flex-1 min-w-0">
             {/* Account Information */}
@@ -47,7 +47,7 @@ export function ProfilePage() {
             <div className="flex flex-col gap-[14px] rounded-[12px] bg-white p-[24px] border border-[#E2E8F0]">
               <span className="font-primary text-[16px] font-bold text-[#0F172A]">KYC Verification</span>
               <div className="h-[1px] bg-[#E2E8F0]" />
-              <div className="flex items-center gap-[16px] p-[24px_16px]">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-[16px] p-[24px_16px]">
                 <div className="flex items-center justify-center w-[56px] h-[56px] rounded-[12px] bg-[#ECFDF5] shrink-0">
                   <ShieldCheck size={28} className="text-[var(--color-accent-cta)]" />
                 </div>
@@ -68,7 +68,7 @@ export function ProfilePage() {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col gap-[16px] w-[420px] shrink-0">
+          <div className="flex flex-col gap-[16px] w-full lg:w-[420px] lg:shrink-0">
             {/* Account Summary */}
             <div className="flex flex-col gap-[16px] rounded-[12px] bg-[var(--color-bg-card)] p-[20px] border border-[var(--color-border-default)]">
               <div className="flex flex-col gap-[4px]">

@@ -13,11 +13,11 @@ export function WalletPage() {
               <span className="font-primary text-[22px] font-bold text-[var(--color-text-primary)]">Wallet Overview</span>
             </div>
           </div>
-          <div className="flex items-center gap-[14px]">
+          <div className="flex flex-wrap items-center gap-[14px]">
             <BalanceBlock label="Available Balance" value="$1,250.00" color="var(--color-success)" />
-            <div className="w-[1px] h-[84px] bg-[var(--color-border-default)]" />
+            <div className="hidden md:block w-[1px] h-[84px] bg-[var(--color-border-default)]" />
             <BalanceBlock label="On Hold" value="$300.00" color="var(--color-warning)" />
-            <div className="w-[1px] h-[84px] bg-[var(--color-border-default)]" />
+            <div className="hidden md:block w-[1px] h-[84px] bg-[var(--color-border-default)]" />
             <BalanceBlock label="Total Balance" value="$1,550.00" color="var(--color-text-primary)" />
           </div>
         </div>
@@ -48,11 +48,9 @@ export function WalletPage() {
         {/* Move Funds */}
         <div className="flex flex-col gap-[12px]">
           <span className="font-primary text-[16px] font-bold text-[var(--color-text-primary)]">Move Funds</span>
-          <div className="flex gap-[12px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-[12px]">
             <MoveFundCard title="Deposit to Wallet" desc="Add funds via external payment" icon={<ArrowDown size={20} />} color="var(--color-success)" to="/transactions/new/deposit-wallet" />
             <MoveFundCard title="Fund cTrader" desc="Transfer from wallet to cTrader" icon={<ArrowRight size={20} />} color="var(--color-accent-cta)" to="/transactions/new/wallet-to-ctrader" />
-          </div>
-          <div className="flex gap-[12px]">
             <MoveFundCard title="Withdraw from cTrader" desc="Move funds back to wallet" icon={<ArrowLeft size={20} />} color="#7C3AED" to="/transactions/new/ctrader-to-wallet" />
             <MoveFundCard title="External Withdrawal" desc="Withdraw to external account" icon={<Landmark size={20} />} color="#EA580C" to="/transactions/new/wallet-withdrawal" />
           </div>
@@ -68,7 +66,7 @@ export function WalletPage() {
             <span className="font-primary text-[12px] font-medium text-[var(--color-text-secondary)]">Wallet:</span>
             <span className="font-primary text-[12px] font-semibold text-[var(--color-accent-cta)] bg-[#EFF6FF] rounded-full px-[10px] py-[5px]">All Transactions</span>
           </div>
-          <div className="flex flex-col">
+          <div className="overflow-x-auto"><div className="flex flex-col min-w-[600px]">
             <div className="flex items-center gap-[12px] py-[14px] font-primary text-[12px] font-semibold text-[var(--color-text-secondary)]">
               <span className="w-[200px]">REQUEST CODE</span>
               <span className="w-[140px]">TYPE</span>
@@ -79,7 +77,7 @@ export function WalletPage() {
             <ActivityRow code="TRX-20260227-ABC" type="Deposit" amount="+$300.00" amountColor="var(--color-success)" status="Pending" />
             <ActivityRow code="TRX-20260226-XYZ" type="Fund cTrader" amount="-$500.00" amountColor="var(--color-danger)" status="Approved" />
             <ActivityRow code="TRX-20260225-QWE" type="Deposit" amount="+$1,000.00" amountColor="var(--color-success)" status="Approved" />
-          </div>
+          </div></div>
         </div>
       </div>
     </AuthenticatedLayout>

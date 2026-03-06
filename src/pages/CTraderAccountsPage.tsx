@@ -19,12 +19,12 @@ export function CTraderAccountsPage() {
         </div>
 
         {/* Section Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-[10px]">
           <div className="flex flex-col gap-[4px]">
             <span className="font-primary text-[20px] font-bold text-[var(--color-text-primary)]">Your Trading Accounts</span>
             <span className="font-primary text-[13px] text-[var(--color-text-secondary)]">Live and demo accounts linked to your profile</span>
           </div>
-          <div className="flex items-center gap-[8px] bg-[#F1F5F9] rounded-full px-[12px] py-[6px]">
+          <div className="flex items-center gap-[8px] bg-[#F1F5F9] rounded-full px-[12px] py-[6px] w-fit">
             <Clock3 size={14} className="text-[var(--color-text-secondary)]" />
             <span className="font-primary text-[12px] text-[var(--color-text-secondary)]">Last synced: 5 mins ago</span>
           </div>
@@ -84,7 +84,7 @@ function AccountCard({ id, type, server, balance, equity, freeMargin, marginUsed
         </div>
         <div className="h-[1px] bg-[var(--color-border-default)]" />
         {/* Metrics */}
-        <div className="flex gap-[10px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-[10px]">
           <Metric label="Balance" value={balance} />
           <Metric label="Equity" value={equity} />
           <Metric label="Free Margin" value={freeMargin} valueColor="var(--color-success)" />

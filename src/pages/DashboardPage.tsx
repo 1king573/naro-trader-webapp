@@ -5,11 +5,11 @@ import { AuthenticatedLayout } from '../components/layout/AuthenticatedLayout';
 export function DashboardPage() {
   return (
     <AuthenticatedLayout title="Dashboard">
-      <div className="flex gap-[16px]">
+      <div className="flex flex-col lg:flex-row gap-[16px]">
         {/* Main Column */}
         <div className="flex flex-col gap-[16px] flex-1 min-w-0">
           {/* Wallet Cards */}
-          <div className="flex gap-[14px]">
+          <div className="flex flex-col sm:flex-row gap-[14px]">
             <WalletCard label="AVAILABLE" value="$1,250.00" color="var(--color-success)" badgeText="+ $200 today" />
             <WalletCard label="ON HOLD" value="$320.00" color="var(--color-warning)" badgeText="2 pending" />
             <WalletCard label="TOTAL" value="$1,570.00" color="var(--color-text-primary)" badgeText="All accounts" />
@@ -43,7 +43,7 @@ export function DashboardPage() {
               <span className="font-primary text-[16px] font-bold text-[var(--color-text-primary)]">Recent Transactions</span>
               <Link to="/transactions" className="font-primary text-[13px] font-medium text-[var(--color-accent-cta)]">View all</Link>
             </div>
-            <div className="flex flex-col">
+            <div className="overflow-x-auto"><div className="flex flex-col min-w-[600px]">
               {/* Header */}
               <div className="flex items-center py-[14px] text-[var(--color-text-secondary)] font-primary text-[12px] font-semibold">
                 <span className="w-[200px]">REQUEST CODE</span>
@@ -55,12 +55,12 @@ export function DashboardPage() {
               <TransactionRow code="TRX-20260227-ABC" type="Deposit" amount="$300.00" status="Pending" />
               <div className="h-[1px] bg-[var(--color-border-default)]" />
               <TransactionRow code="TRX-20260226-XYZ" type="Withdrawal" amount="$150.00" status="Approved" />
-            </div>
+            </div></div>
           </div>
         </div>
 
         {/* Quick Actions */}
-        <div className="flex flex-col gap-[10px] w-[200px] shrink-0">
+        <div className="flex flex-col gap-[10px] w-full lg:w-[200px] lg:shrink-0">
           <QuickAction label="Deposit to Wallet" color="var(--color-success)" icon={<ArrowDown size={18} />} to="/transactions/new/deposit-wallet" />
           <QuickAction label="Fund cTrader" color="var(--color-accent-cta)" icon={<ArrowRight size={18} />} to="/transactions/new/wallet-to-ctrader" />
           <QuickAction label="Withdraw to Wallet" color="#7C3AED" icon={<ArrowLeft size={18} />} to="/transactions/new/ctrader-to-wallet" />

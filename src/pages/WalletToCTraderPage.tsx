@@ -30,7 +30,7 @@ export function WalletToCTraderPage() {
           </div>
         </div>
 
-        <div className="flex gap-[24px]">
+        <div className="flex flex-col lg:flex-row gap-[24px]">
           <div className="flex-1 min-w-0">
             {submitted ? (
               <div className="flex flex-col items-center gap-[16px] rounded-[12px] bg-white border border-[#E2E8F0] p-[32px]">
@@ -75,7 +75,7 @@ export function WalletToCTraderPage() {
             )}
           </div>
 
-          <div className="flex flex-col gap-[16px] w-[420px] shrink-0">
+          <div className="flex flex-col gap-[16px] w-full lg:w-[420px] lg:shrink-0">
             <div className="flex flex-col gap-[14px] rounded-[12px] bg-white border border-[#E2E8F0] p-[20px]">
               <div className="flex items-center justify-between"><span className="font-primary text-[14px] font-bold text-[#0F172A]">Wallet Summary</span></div>
               <div className="flex flex-col gap-[10px]">

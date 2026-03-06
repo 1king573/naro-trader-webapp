@@ -27,7 +27,7 @@ export function AdminApprovalsPage() {
     <AdminLayout title="Approvals Queue">
       <div className="flex flex-col gap-[24px]">
         {/* Stats Row */}
-        <div className="flex gap-[16px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-[16px]">
           <StatCard icon={<Clock3 size={20} />} value="3" label="Awaiting Approval" color="#F59E0B" />
           <StatCard icon={<CircleCheck size={20} />} value="12" label="Approved Today" color="#10B981" />
           <StatCard icon={<CircleX size={20} />} value="2" label="Rejected Today" color="#EF4444" />
@@ -87,7 +87,7 @@ export function AdminApprovalsPage() {
             <span className="font-primary text-[12px] font-medium text-[#64748B] bg-[#F1F5F9] rounded-full px-[10px] py-[4px]">Today</span>
           </div>
 
-          <div className="flex flex-col rounded-[12px] bg-white border border-[#E2E8F0] overflow-hidden">
+          <div className="overflow-x-auto rounded-[12px] bg-white border border-[#E2E8F0]"><div className="flex flex-col min-w-[900px] overflow-hidden">
             {/* Table Header */}
             <div className="flex items-center bg-[#F8FAFC] px-[20px] py-[12px]">
               <span className="w-[220px] font-primary text-[11px] font-semibold text-[#64748B] tracking-[0.5px]">REQUEST CODE</span>
@@ -103,7 +103,7 @@ export function AdminApprovalsPage() {
             <TableRow code="TRX-20260227-XY003" user="carol@example.com" type="WALLET_TO_CTRADER" amount="$1,200.00" status="Approved" statusColor="#10B981" statusBg="#ECFDF5" time="8:15 AM" />
             <TableRow code="TRX-20260227-XY004" user="dave@example.com" type="DEPOSIT" amount="$850.00" status="Approved" statusColor="#10B981" statusBg="#ECFDF5" time="7:50 AM" />
             <TableRow code="TRX-20260226-XY005" user="eve@example.com" type="WITHDRAWAL" amount="$325.00" status="Rejected" statusColor="#EF4444" statusBg="#FEF2F2" time="7:10 AM" />
-          </div>
+          </div></div>
 
           <div className="flex justify-end">
             <span className="font-primary text-[13px] font-medium text-[var(--color-accent-cta)] cursor-pointer hover:underline">
@@ -116,7 +116,7 @@ export function AdminApprovalsPage() {
       {/* Approve Modal */}
       {showApproveModal && (
         <ModalOverlay>
-          <div className="flex flex-col gap-[16px] rounded-[16px] bg-white p-[24px] w-[400px]">
+          <div className="flex flex-col gap-[16px] rounded-[16px] bg-white p-[24px] w-full max-w-[400px] mx-4">
             <div className="flex justify-center">
               <CircleCheck size={28} className="text-[var(--color-success)]" />
             </div>
@@ -147,7 +147,7 @@ export function AdminApprovalsPage() {
       {/* Reject Modal */}
       {showRejectModal && (
         <ModalOverlay>
-          <div className="flex flex-col gap-[16px] rounded-[16px] bg-white p-[24px] w-[400px]">
+          <div className="flex flex-col gap-[16px] rounded-[16px] bg-white p-[24px] w-full max-w-[400px] mx-4">
             <div className="flex justify-center">
               <CircleX size={28} className="text-[var(--color-danger)]" />
             </div>

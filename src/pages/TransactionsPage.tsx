@@ -22,14 +22,14 @@ export function TransactionsPage() {
     <AuthenticatedLayout title="Transactions">
       <div className="flex flex-col gap-[16px]">
         {/* Page Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-[12px]">
           <div className="flex flex-col gap-[4px]">
             <span className="font-primary text-[20px] font-bold text-[var(--color-text-primary)]">Transaction History</span>
             <span className="font-primary text-[13px] text-[var(--color-text-secondary)]">All your funding and withdrawal requests</span>
           </div>
           <Link
             to="/transactions/new"
-            className="flex items-center gap-[8px] bg-[var(--color-accent-cta)] text-white rounded-[8px] px-[20px] py-[10px] font-primary text-[14px] font-bold hover:bg-[#1D4ED8] transition-colors"
+            className="flex items-center justify-center gap-[8px] bg-[var(--color-accent-cta)] text-white rounded-[8px] px-[20px] py-[10px] font-primary text-[14px] font-bold hover:bg-[#1D4ED8] transition-colors w-full sm:w-auto shrink-0"
           >
             <Plus size={16} />
             <span>New Request</span>
@@ -38,11 +38,11 @@ export function TransactionsPage() {
 
         {/* Filters */}
         <div className="flex flex-col gap-[10px] rounded-[10px] bg-[var(--color-bg-card)] border border-[var(--color-border-default)] p-[16px_20px]">
-          <div className="flex gap-[12px]">
+          <div className="flex flex-col sm:flex-row gap-[12px]">
             <FilterDropdown label={statusFilter} />
             <FilterDropdown label={typeFilter} />
-            <div className="flex items-center gap-[8px] flex-1 h-[40px] rounded-[8px] bg-[var(--color-bg-card)] border border-[var(--color-border-default)] px-[12px]">
-              <Search size={16} className="text-[var(--color-text-secondary)]" />
+            <div className="flex items-center gap-[8px] w-full sm:flex-1 h-[40px] rounded-[8px] bg-[var(--color-bg-card)] border border-[var(--color-border-default)] px-[12px]">
+              <Search size={16} className="text-[var(--color-text-secondary)] shrink-0" />
               <span className="font-primary text-[13px] text-[var(--color-text-secondary)]">Search by code or amount...</span>
             </div>
           </div>
@@ -50,7 +50,7 @@ export function TransactionsPage() {
         </div>
 
         {/* Table */}
-        <div className="flex flex-col rounded-[12px] bg-[var(--color-bg-card)] border border-[#E2E8F0] shadow-[0_2px_8px_rgba(0,0,0,0.06)] overflow-hidden">
+        <div className="overflow-x-auto rounded-[12px] bg-[var(--color-bg-card)] border border-[#E2E8F0] shadow-[0_2px_8px_rgba(0,0,0,0.06)]"><div className="flex flex-col min-w-[900px] overflow-hidden">
           {/* Header */}
           <div className="flex items-center bg-[var(--color-bg-canvas)] px-[20px] py-[12px] border-b border-[var(--color-border-default)]">
             <span className="w-[260px] font-primary text-[12px] font-semibold text-[var(--color-text-secondary)] tracking-[0.5px]">REQUEST CODE</span>
@@ -94,7 +94,7 @@ export function TransactionsPage() {
               </button>
             </div>
           </div>
-        </div>
+        </div></div>
       </div>
     </AuthenticatedLayout>
   );
@@ -102,7 +102,7 @@ export function TransactionsPage() {
 
 function FilterDropdown({ label }: { label: string }) {
   return (
-    <div className="flex items-center justify-between h-[40px] rounded-[8px] bg-[var(--color-bg-card)] border border-[var(--color-border-default)] px-[12px] min-w-[160px] cursor-pointer">
+    <div className="flex items-center justify-between h-[40px] rounded-[8px] bg-[var(--color-bg-card)] border border-[var(--color-border-default)] px-[12px] w-full sm:w-auto sm:min-w-[160px] cursor-pointer">
       <span className="font-primary text-[13px] text-[var(--color-text-primary)]">{label}</span>
       <ChevronDown size={16} className="text-[var(--color-text-secondary)]" />
     </div>

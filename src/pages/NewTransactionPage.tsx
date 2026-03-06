@@ -68,17 +68,10 @@ export function NewTransactionPage() {
         </div>
 
         {/* Option Grid */}
-        <div className="flex gap-[20px]">
-          <div className="flex flex-col gap-[20px] flex-1">
-            {options.filter((_, i) => i % 2 === 0).map((opt) => (
-              <OptionCard key={opt.to} {...opt} />
-            ))}
-          </div>
-          <div className="flex flex-col gap-[20px] flex-1">
-            {options.filter((_, i) => i % 2 === 1).map((opt) => (
-              <OptionCard key={opt.to} {...opt} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px]">
+          {options.map((opt) => (
+            <OptionCard key={opt.to} {...opt} />
+          ))}
         </div>
 
         {/* Info Banner */}
@@ -95,7 +88,7 @@ export function NewTransactionPage() {
         {/* Recent Requests */}
         <div className="flex flex-col gap-[8px]">
           <span className="font-primary text-[13px] font-bold text-[#64748B]">Your recent requests</span>
-          <div className="flex items-center h-[24px] font-primary text-[12px] font-medium text-[var(--color-text-secondary)]">
+          <div className="overflow-x-auto"><div className="flex items-center h-[24px] font-primary text-[12px] font-medium text-[var(--color-text-secondary)] min-w-[760px]">
             <span className="w-[220px]">Request Code</span>
             <span className="w-[180px]">Type</span>
             <span className="w-[180px]">Amount</span>
@@ -113,7 +106,7 @@ export function NewTransactionPage() {
               </div>
             </div>
           ))}
-          <div className="flex justify-end h-[24px]">
+          </div><div className="flex justify-end h-[24px]">
             <Link to="/transactions" className="font-primary text-[13px] font-medium text-[#2563EB] hover:underline">View all transactions</Link>
           </div>
         </div>
@@ -126,7 +119,7 @@ function OptionCard({ title, desc, icon: Icon, iconColor, iconBg, flowLabel, flo
   title: string; desc: string; icon: typeof ArrowDown; iconColor: string; iconBg: string; flowLabel: string; flowColor: string; to: string;
 }) {
   return (
-    <Link to={to} className="flex flex-col gap-[12px] h-[190px] rounded-[16px] bg-white border border-[#E2E8F0] p-[28px] hover:shadow-md transition-shadow">
+    <Link to={to} className="flex flex-col gap-[12px] sm:h-[190px] rounded-[16px] bg-white border border-[#E2E8F0] p-[28px] hover:shadow-md transition-shadow">
       <div className="flex items-center justify-center w-[48px] h-[48px] rounded-[12px]" style={{ backgroundColor: iconBg }}>
         <Icon size={24} style={{ color: iconColor }} />
       </div>
